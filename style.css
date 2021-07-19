@@ -1,0 +1,142 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Raleway", sans-serif, 微軟正黑體;
+    text-decoration: none;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background-color: #e0e0e2;
+}
+
+.card__container {
+    width: 100%;
+    height: 100%;
+    padding: 40px;
+    margin: 0;
+    box-sizing: border-box; /* box-sizing => border-box屬性長寬包含了div的padding以及border */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card {
+    width: 350px;
+    height: 200px;
+    padding: 25px;
+    margin: 0 auto; 
+    position: relative;
+    background: linear-gradient(#f2f2f2, #eee);
+    overflow: hidden;
+    border-radius: 6px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    transition: all .5s;
+}
+
+.card__name {
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: -3px;
+}
+
+.card__eName {
+    color: #666;
+    padding: 5px 0;
+}
+
+.card__job {
+    color: #36b9c1;
+    font-weight: 500;
+}
+
+.card__detail--intro {
+    letter-spacing: 1px;
+    line-height: 22px;
+    padding: 0; /* 將文字的padding,margin改成0 */
+    margin: 0;
+    color: #666;
+    font-size: 12px;
+}
+
+hr {
+    margin: 10px 0;
+}
+
+.card__detail{
+    margin-top: 10px;
+    padding-right: 150px;
+
+}
+
+.link-container {
+    margin-top: 50px;
+    height: 10%;
+}
+
+.link {
+    display: block;
+    text-align: center;
+    font-weight: 800;
+    text-decoration: none;
+    color: #666;
+    transition: all .5s;
+
+}
+
+.wave {
+  width: 700px;
+  height: 700px;
+  opacity: 0.4;
+  position: absolute;
+  left: 0;
+  background: #36b9c1;
+  border-radius: 40%;
+  /* transform-origin: 50% 48%; */
+  transition: left 2s;
+  animation: drift 6000ms infinite linear;
+  margin-left: 280px;
+}
+
+.wave.-three {
+  animation: drift 7000ms infinite linear;
+  margin-left: 270px;
+}
+
+.wave.-two {
+  animation: drift 10000ms infinite linear;
+  background-color: yellow;
+  opacity: 0.1;
+  margin-left: 260px;
+}
+
+.wave.right {
+  margin-top: -250px;
+}
+
+@keyframes drift {
+  from {
+    transform: rotate(0deg);
+  }
+  from {
+    transform: rotate(360deg);
+  }
+}
+
+.card:hover {
+  transform: translate3d(-5px, -5px, 0);
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+  /* 滑鼠碰觸時讓卡片向左上飄移 */
+}
+
+.card:hover .wave.right {
+  left: 70px;
+}
+
+.link:hover {
+    color: #36b9c1;
+    font-size: 20px;
+}
